@@ -1,21 +1,72 @@
+import { useState } from "react";
+import { createBrowserRouter } from "react-router-dom";
+import App from "./presentation/layout/App";
+import DashboardView from "@/view/DashboardView/DashboardView";
+import LoginView from "@/view/AuthView/LoginView/LoginView";
+import Root from "./presentation/layout/RootLayout/Root.tsx";
+import ErrorView from "./presentation/view/ErrorView";
+import AuthRoutes from "./presentation/layout/AuthRoutes/AuthRoutes.tsx";
+import DashboardLayout from "./presentation/layout/DashboardLayout/DashboardLayout.tsx";
+import ForgotPasswordView from "@/view/AuthView/ForgotPasswordView/ForgotPasswordView.tsx";
+import AgencyUsersTableView from "@/view/AgencyManagementView/AgencyUsersTableView";
+import UserManagementView from "@/view/UserManagementView/UserManagementView.tsx";
+import AnalyticsView from "@/view/AnalyticsView/AnalyticsView.tsx";
+import SettingsView from "@/view/SettingsView/SettingsView.tsx";
+import MenutView from "@/view/AgencyManagementView/AgencyManagementView.tsx";
 
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginPage from './assets/Authentication Pages/loginpage/loginview';
-import RegisterView from './assets/Authentication Pages/registerpage/registerview';
-import App from "./App.tsx";
+const routes = createBrowserRouter([
+  {
+    element: <Root />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        element: <AuthRoutes />,
+        children: [
+          {
+            path: "/login",
+            element:  <LoginView />  // Conditional rendering
+          },
+          {
+            path: "/forgot-password",
+            element: <ForgotPasswordView />,
+          },
+        ],
+      },
+      {
+        element: <App />,
+        children: [
+          {
+            path: "/",
+            element: <DashboardLayout />,
+            children: [
+              {
+                index: true,
+                element: <DashboardView />,
+              },
+              {
+                path: "agency-management",
+                children: [
+                 
+                  {
+                    path: 'user-management',
+                    element: <UserManagementView/>
+                },
+                {
+                    path: 'analytics',
+                    element: <AnalyticsView/>
+                },
+                {
+                    path: 'settings',
+                    element: <SettingsView/>
+                },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]);
 
-const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="login" element={<LoginPage />} />
-          <Route path="register" element={<RegisterView />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
-
-export default AppRoutes;
+export default routes;
