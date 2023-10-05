@@ -6,11 +6,10 @@ import {
     StyledAddAgencyButton,
     StyledAgencyTableView
 } from "@/view/AgencyManagementView/AgencyManagementView.styled.ts";
-import AddOrUpdateAgencyModal from "@/view/AgencyManagementView/_components/AddAgencyModal";
 import Loading from "@/components/Loading/Loading.tsx";
 import {useUILayoutStore} from "@/hooks/UILayout/useUILayout.ts";
 
-const AgencyManagementView: React.FunctionComponent = () => {
+const MenutView: React.FunctionComponent = () => {
     const [isAddAgencyModalOpen, setIsAddAgencyModalOpen] = useState<boolean>(false);
     const {data: agencies, isLoading} = useAgencies();
     const openAddAgencyModal = () => {
@@ -19,39 +18,16 @@ const AgencyManagementView: React.FunctionComponent = () => {
 
     const {addPageTitle} = useUILayoutStore()
     useEffect(() => {
-        addPageTitle("Agency Management")
+        addPageTitle("Menu")
     }, []);
 
     if (isLoading)
         return <Loading title={"Fetching Data..."}/>
     return (
         <>
-            <AddOrUpdateAgencyModal
-                agencyFullName={""}
-                agencyId={""}
-                agencyEmail={""}
-                key={""}
-                isOpen={isAddAgencyModalOpen}
-                dispatcher={setIsAddAgencyModalOpen}
-                type='ADD'
-            />
-            <StyledActionBar>
-                <StyledAddAgencyButton
-                    onClick={openAddAgencyModal}
-                >
-                    Add Agency
-                </StyledAddAgencyButton>
-            </StyledActionBar>
-            <StyledAgencyTableView>
-                {agencies && (
-                    <AgencyTable
-                        headers={["Full Name", "Email", "Number of Users", "Expiry Date", "Actions"]}
-                        agencies={agencies}
-                    />
-                )}
-            </StyledAgencyTableView>
-        </>
+           <h1> is Menu</h1>
+           </>
     );
 };
 
-export default AgencyManagementView;
+export default MenutView;

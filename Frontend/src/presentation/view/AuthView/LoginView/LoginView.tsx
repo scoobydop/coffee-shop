@@ -15,7 +15,7 @@ import {toast} from "react-toastify";
 import Cookies from "universal-cookie";
 
 const LoginView: React.FunctionComponent = () => {
-    const cookie = new Cookies();
+    const cookie = new Cookies() ;
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const navigate = useNavigate();
     const login = useAdminLogin({
