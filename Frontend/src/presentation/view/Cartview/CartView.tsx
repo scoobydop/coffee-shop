@@ -1,14 +1,17 @@
 import React, {useEffect} from "react";
 import {useUILayoutStore} from "@/hooks/UILayout/useUILayout.ts";
 
-const AnalyticsView: React.FunctionComponent = () => {
+const CartView: React.FunctionComponent = () => {
     const {addPageTitle} = useUILayoutStore()
     useEffect(() => {
-        addPageTitle("Analytics")
+        addPageTitle("Cart")
     }, []);
+
     return (
-        <>Analytics View</>
-    );
+        <>
+
+My Cart        </>
+    )
 };
 
-export default AnalyticsView;
+export default CartView;

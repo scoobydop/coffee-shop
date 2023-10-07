@@ -23,7 +23,6 @@ class APIClient<T> {
     }
 
     getAll = () => {
-
         return axiosInstance
             .get<T[]>(this.endpoint, {
                 params: {

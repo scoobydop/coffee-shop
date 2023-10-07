@@ -3,7 +3,6 @@ import styled from "styled-components";
 const StyledAuthWrapper = styled.div`
   height: 100%;
   width: 100%;
-  background-image: url("src/assets/images/logo/Graphic.png");
   background-position: right;
   background-repeat: no-repeat;
   position: absolute;

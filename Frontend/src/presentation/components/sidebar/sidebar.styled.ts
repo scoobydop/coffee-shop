@@ -16,7 +16,6 @@ const StyledDashboardSidebarLogoWrapper = styled.div`
 
 const StyledDashboardSidebarLogo = styled.img`
   width: 170px;
-  height: 35px;
   margin: 2.5em 0;
   object-fit: cover;
 `;

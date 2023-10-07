@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./presentation/layout/App";
 import DashboardView from "@/view/DashboardView/DashboardView";
@@ -8,11 +7,9 @@ import ErrorView from "./presentation/view/ErrorView";
 import AuthRoutes from "./presentation/layout/AuthRoutes/AuthRoutes.tsx";
 import DashboardLayout from "./presentation/layout/DashboardLayout/DashboardLayout.tsx";
 import ForgotPasswordView from "@/view/AuthView/ForgotPasswordView/ForgotPasswordView.tsx";
-import AgencyUsersTableView from "@/view/AgencyManagementView/AgencyUsersTableView";
-import UserManagementView from "@/view/UserManagementView/UserManagementView.tsx";
-import AnalyticsView from "@/view/AnalyticsView/AnalyticsView.tsx";
 import SettingsView from "@/view/SettingsView/SettingsView.tsx";
-import MenutView from "@/view/AgencyManagementView/AgencyManagementView.tsx";
+import MenuView from "@/view/MenuView/MenuView.tsx";
+import CartView from "@/view/Cartview/CartView.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -44,17 +41,17 @@ const routes = createBrowserRouter([
                 element: <DashboardView />,
               },
               {
-                path: "agency-management",
+                path: "/",
                 children: [
-                 
-                  {
-                    path: 'user-management',
-                    element: <UserManagementView/>
-                },
+
                 {
-                    path: 'analytics',
-                    element: <AnalyticsView/>
+                    path: 'menu',
+                    element: <MenuView/>
                 },
+                  {
+                    path: 'cart',
+                    element:< CartView/>
+                  },
                 {
                     path: 'settings',
                     element: <SettingsView/>

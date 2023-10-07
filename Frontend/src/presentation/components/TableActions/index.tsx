@@ -5,9 +5,8 @@ import {
 import DeleteIcon from "@/assets/images/table/DeleteIcon.tsx";
 import EditIcon from "@/assets/images/table/EditIcon.tsx";
 import React, {useState} from "react";
-import AddOrUpdateAgencyModal from "@/view/AgencyManagementView/_components/AddAgencyModal";
-import DeleteAndLogoutAgencyModal from "@/view/AgencyManagementView/_components/DeleteAndLogoutAgencyModal";
-import UpdateUsersModal from "@/view/UserManagementView/_components/UpdateUsers/UpdateUsersModal.tsx";
+import AddOrUpdateAgencyModal from "@/view/MenuView/_components/AddAgencyModal";
+import DeleteAndLogoutAgencyModal from "@/view/MenuView/_components/DeleteAndLogoutAgencyModal";
 
 
 interface ITableActionProps{

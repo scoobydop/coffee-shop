@@ -1,12 +1,10 @@
 import React from "react";
-import {StyledLoaderSpinner, StyledLoadingBox, StyledLoadingWrapper} from "@/components/Loading/Loading.styled.ts";
+import {StyledLoaderSpinner, StyledLoadingBox, StyledLoadingWrapper} from "@/components/Loading/Loading.styled.js";
 import Modal from "react-modal";
-interface ILoadingProps {
-    title: string;
-    description?: string
-}
 
-const Loading: React.FunctionComponent<ILoadingProps> = ({title, description}) => {
+
+
+const Loading: React.FunctionComponent<ILoadingProps> d= ({title, description}) => {
 
     return (
         <Modal

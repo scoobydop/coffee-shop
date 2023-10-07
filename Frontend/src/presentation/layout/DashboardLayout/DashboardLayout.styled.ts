@@ -9,7 +9,6 @@ const StyledDashboardLayoutWrapper = styled.div`
 const StyledDashboardContent = styled.div`
   flex: 1;
   padding: 0 30px;
-  background-image: url("src/assets/images/logo/Graphic.png");
   background-position: right;
   background-repeat: no-repeat;
 `;

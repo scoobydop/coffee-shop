@@ -1,8 +1,7 @@
 import {create} from "zustand";
 import {mountStoreDevtool} from "simple-zustand-devtools";
 
-interface UIStore {
-}
+
 
 
 const useUIStore = create<UIStore>((_) => ({}));

@@ -9,19 +9,14 @@ import {
     StyledSidebarLogoutWrapper,
     StyledSidebarWrapper,
 } from "@/components/Sidebar/Sidebar.styled.ts";
-import Logo from "@/assets/images/logo/Logo-for-dark.svg";
+import Logo from "@/assets/images/logo/Coffeeshoplogo.svg";
 import DashboardIcon from "@/assets/images/sidebar/DashboardIcon.tsx";
-import AgencyIcon from "@/assets/images/sidebar/BuildingIcon.tsx";
-import UserIcon from "@/assets/images/sidebar/Usericon";
-import AnalyticsIcon from "@/assets/images/sidebar/Analyticsicon";
+import AgencyIcon from "@/assets/images/sidebar/MenuIcon.tsx";
+import CartIcon from "@/assets/images/sidebar/Carticon.tsx";
 import SettingIcon from "@/assets/images/sidebar/Settingsicon";
 import LogoutIcon from "@/assets/images/sidebar/LogoutIcon.tsx";
-import {useDeleteLoginStore} from "@/hooks/DeleteAndLogout/useLogoutandDelete.ts";
-import DeleteAndLogoutAgencyModal from "@/view/AgencyManagementView/_components/DeleteAndLogoutAgencyModal";
 
 const Sidebar: React.FunctionComponent = () => {
-    const showModal = useDeleteLoginStore(store => store.showModal);
-    const [isLogoutAgencyModalOpen, setIsLogoutAgencyModalOpen] = useState<boolean>(false);
 
     const sidebarRoutes = [
         {
@@ -31,19 +26,15 @@ const Sidebar: React.FunctionComponent = () => {
         },
         {
             icon: <AgencyIcon/>,
-            label: "Agency Management",
-            route: "/agency-management",
+            label: "Menu",
+            route: "/menu",
         },
         {
-            icon: <UserIcon/>,
-            label: "User Management",
-            route: "/user-management",
+            icon: <CartIcon/>,
+            label: "Cart",
+            route: "/cart",
         },
-        {
-            icon: <AnalyticsIcon/>,
-            label: "Analytics",
-            route: "/analytics",
-        },
+
         {
             icon: <SettingIcon/>,
             label: "Settings",
@@ -56,11 +47,7 @@ const Sidebar: React.FunctionComponent = () => {
 
     return (
         <>
-            <DeleteAndLogoutAgencyModal
-                dispatcher={setIsLogoutAgencyModalOpen}
-                type="LOGOUT"
-                isOpen={isLogoutAgencyModalOpen}
-            />
+
         <StyledSidebarWrapper>
             <StyledDashboardSidebarLogoWrapper>
                 <StyledDashboardSidebarLogo src={Logo}/>
@@ -75,7 +62,7 @@ const Sidebar: React.FunctionComponent = () => {
                     ))}
                 </StyledDashboardSidebarLinks>
                 <StyledSidebarLogoutWrapper>
-                    <StyledDashboardSidebarLogout onClick={() => setIsLogoutAgencyModalOpen(true)} >
+                    <StyledDashboardSidebarLogout >
                         <LogoutIcon/>
                         <span>Logout</span>
                     </StyledDashboardSidebarLogout>

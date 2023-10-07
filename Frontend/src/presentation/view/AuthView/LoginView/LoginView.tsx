@@ -8,7 +8,7 @@ import {
     StyledLoginLogo,
     StyledRememberAndForget,
 } from "./LoginView.styled";
-import Logo from "@/assets/images/logo/Coffeeshoplogo.jpg";
+import Logo from "@/assets/images/logo/Coffeeshoplogo.svg";
 import useAdminLogin from "@/hooks/Auth/useLogin.ts";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
